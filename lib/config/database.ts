@@ -6,7 +6,9 @@ export const dataBaseConfig:ConnectionOptions = {
 	url: process.env.DATABASE_URL,
 	type: "postgres",
 	synchronize: true,
-	ssl: true,
+	ssl: {
+		rejectUnauthorized: false
+	},
 	entities:[
 		Photo
 	]
