@@ -2,8 +2,7 @@ require("dotenv").config()
 
 import app from "./app"
 import {createConnection} from "typeorm"
-import {dataBaseConfig} from "./config/database"
-
+import dataBaseConfig = require("./config/database")
 
 let PORT = process.env.PORT || 3000
 

@@ -6,7 +6,10 @@
   "scripts": {
     "postinstall": "tsc",
     "start": "node ./dist/server.js",
-    "typeorm": "./node_modules/.bin/typeorm"
+    "typeorm": "ts-node ./node_modules/typeorm/cli.js --config lib/config/database.ts",
+		"db:create":"yarn run typeorm migration:create -n",
+		"db:migrate":"yarn run typeorm migration:run",
+		"db:generate":"yarn run typeorm migration:generate -n"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
